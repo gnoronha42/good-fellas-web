@@ -1,0 +1,38 @@
+.tela-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header img {
+    width: 100%; /* A imagem vai ocupar toda a largura do dispositivo */
+    max-height: 200px; /* Defina a altura máxima que você deseja para a imagem */
+    object-fit: cover; /* Isso vai cortar a imagem para que ela preencha o espaço disponível */
+  }
+  
+  .lista-produtos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Espaço entre os cards dos produtos */
+    padding: 16px; /* Espaço em torno da lista de produtos */
+    width: 100%;
+  }
+  
+  .card-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 16px;
+  }
+  
+  .card-produto img {
+    max-width: 100%; /* Imagem vai ocupar toda a largura do card */
+    max-height: 150px; /* Defina a altura máxima que você deseja para a imagem do produto */
+    object-fit: cover; /* Corta a imagem para preencher o espaço disponível */
+  }
+  
+  .card-produto button {
+    margin-top: 8px;
+  }
+  

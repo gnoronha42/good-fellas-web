@@ -1,22 +1,24 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { adicionarAoCarrinho } from './redux/actions';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';  
 import TelaMenu from './components/TelaMenu';
-
-const produtos = [
-  { id: 1, nome: 'x-bacon', imagem: 'URL_IMAGEM_X-BACON' },
-  { id: 2, nome: 'x-salada', imagem: 'URL_IMAGEM_X-SALADA' },
-  { id: 3, nome: 'x-tudo', imagem: 'URL_IMAGEM_X-TUDO' },
-];
+import DetalhesProduto from './components/DetalhesProduto';
+import Carrinho from './components/Carrinho';
+import Header from './components/Header/Header';
 
 function App() {
-  const dispatch = useDispatch();
-
   return (
-    <TelaMenu 
-      produtos={produtos} 
-      adicionarAoCarrinho={(produto) => dispatch(adicionarAoCarrinho(produto))}
-    />
+    <Provider store={store}>
+      <Router>
+       <Header /> 
+        <Switch>
+          <Route path="/" exact component={TelaMenu} />
+          <Route path="/produto/:id" exact component={DetalhesProduto} />
+          <Route path="/carrinho" exact component={Carrinho} />
+        </Switch>
+      </Router>
+    </Provider>
   );
 }
 

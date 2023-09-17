@@ -7,3 +7,9 @@ export const removerDoCarrinho = (produtoId) => ({
   type: 'REMOVER_DO_CARRINHO',
   payload: produtoId,
 });
+
+
+export const diminuirQuantidade = (produtoId) => ({
+  type: 'DIMINUIR_QUANTIDADE',
+  payload: produtoId,
+});

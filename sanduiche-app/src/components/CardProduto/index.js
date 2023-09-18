@@ -21,9 +21,13 @@ function CardProduto({ produto }) {
       <div className="card-produto" onClick={goToDetails}>
           <h2>{produto.nome}</h2>
           <img src={produto.imagem} alt={produto.nome} />
+          
+          <div> 
           <button onClick={(e) => { e.stopPropagation(); dispatch(diminuirQuantidade(produto.id)); }}>-</button>
           <span>{quantidade}</span>
           <button onClick={(e) => { e.stopPropagation(); dispatch(adicionarAoCarrinho(produto)); }}>+</button>
+          </div>
+          
       </div>
   );
 }

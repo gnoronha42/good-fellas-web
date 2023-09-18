@@ -8,8 +8,24 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin: 10px;
     transition: transform 0.2s;
+    width: 80%; 
+    max-width: 300px; 
+    margin: 10px auto; 
   }
   
+  @media (min-width: 768px) {
+    .card-produto {
+      width: 45%; 
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .card-produto {
+      width: 30%; 
+    }
+  }
+
+
   .card-produto:hover {
     transform: scale(1.05);
   }
@@ -28,6 +44,7 @@
   
   .card-produto button {
     padding: 8px 12px;
+    margin: 5px; 
     background-color: #007bff;
     color: #fff;
     border: none;
